@@ -38,7 +38,7 @@ export default function App() {
         />
         <Stack.Screen name="New" component={NewScreen} />
       </Stack.Navigator>
-      {/* <Toast ref={(ref) => Toast.setRef(ref)} /> */}
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </NavigationContainer>
   );
 }

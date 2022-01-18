@@ -1,12 +1,8 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import Toast from 'react-native-toast-message';
-import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './src/screens/HomeScreen';
-import NewScreen from './src/screens/NewScreen';
-import { Icon } from 'react-native-elements';
 
 const Stack = createStackNavigator();
 
@@ -24,21 +20,19 @@ export default function App() {
         <Stack.Screen 
             name="Home" 
             component={HomeScreen} 
-            options={({navigation}) => ({
+            options={{
                 headerRight: () => (
-                    <Icon
+                    <Icon 
                     name="plus" 
                     type="feather" 
                     color="#fff"
                     style={style.headerIcon}
-                    onPress={() =>navigation.navigate('New')}
                 />
             )
-            })}
+            }}
         />
         <Stack.Screen name="New" component={NewScreen} />
       </Stack.Navigator>
-      {/* <Toast ref={(ref) => Toast.setRef(ref)} /> */}
     </NavigationContainer>
   );
 }

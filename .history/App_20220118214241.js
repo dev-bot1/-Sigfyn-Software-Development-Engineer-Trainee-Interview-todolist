@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
+import axios from 'axios';
 import Toast from 'react-native-toast-message';
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -38,8 +39,9 @@ export default function App() {
         />
         <Stack.Screen name="New" component={NewScreen} />
       </Stack.Navigator>
-      {/* <Toast ref={(ref) => Toast.setRef(ref)} /> */}
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </NavigationContainer>
+
   );
 }
 const style = StyleSheet.create({
